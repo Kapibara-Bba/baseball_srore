@@ -6,7 +6,7 @@
         <%= render "devise/shared/error_messages", resource: resource %>
 
           <div class="field">
-          <%= f.label :選手名 %><br />
+          <%= f.label :名前 %><br />
           <%= f.text_field :username, autofocus: true %>
         </div>
 
@@ -27,13 +27,15 @@
           <%= f.label :パスワード確認 %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
         </div>
+      <% end %>
 
-        <div class="actions">
-          <div class="container mt-3">
-            <%= f.submit "登録", class: "btn btn-info" %>
+      <div class="actions">
+        <div class="container mt-3">
+          <div class="row">
+            <%= link_to "登録してチーム選択へ", users_path, class: "btn btn-info col-xs-12" %>
           </div>
         </div>
-      <% end %>
+      </div>
 
       <div class="container mt-3">
         <div class="sign_up-link">

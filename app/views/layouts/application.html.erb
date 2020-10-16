@@ -4,24 +4,76 @@
     <title>BaseballScore</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <script src="https://kit.fontawesome.com/7b4ac370e3.js" crossorigin="anonymous"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header class="navbar navbar-inverse p-5">
+      <div class="container">
+        <nav class="nav navbar-nav navbar-left" style="color: white">
+          <span>Besescore</span>
+        </nav>
+        <nav class="nav navbar-nav navbar-right navbar-expand-lg">
+          <div id="slidemenu">
+            <ul class="">
+              <% if user_signed_in? %>
+                <li class="">
+                  <%= link_to users_path do %>
+                    <i class="glyphicon glyphicon-home" aria-hidden="true"></i> 試合一覧
+                  <% end %>
+                </li>
+                <li class="">
+                  <%= link_to users_path do %>
+                    <i class="glyphicon glyphicon-home" aria-hidden="true"></i> マイチーム
+                  <% end %>
+                </li>
+                <li class="">
+                  <%= link_to users_path do %>
+                    <i class="glyphicon glyphicon-home" aria-hidden="true"></i> 個人成績
+                  <% end %>
+                </li>
+                <li class="">
+                  <%= link_to destroy_user_session_path, method: :delete do %>
+                    <i class="glyphicon glyphicon-home" aria-hidden="true"></i> ログアウト
+                  <% end %>
+                </li>
+              <% else %>
+                <li class="">
+                  <%= link_to users_path do %>
+                    <i class="glyphicon glyphicon-home" aria-hidden="true"></i> 試合一覧
+                  <% end %>
+                </li>
+                <li class="">
+                  <%= link_to new_user_registration_path do %>
+                    <i class="glyphicon glyphicon-edit sign_up" aria-hidden="true"></i> 新規登録
+                  <% end %>
+                </li>
+                <li class="">
+                  <%= link_to new_user_session_path do %>
+                    <i class="glyphicon glyphicon-log-in sign_in" aria-hidden="true"></i> ログイン
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
     <% if flash[:notice] %>
       <div class="notification is-info">
         <p class="notice"><%= notice %></p>
       </div>
     <% end %>
-    
+
     <% if flash[:alert] %>
       <div class="notification is-danger">
         <p class="alert"><%= alert %></p>
       </div>
     <% end %>
-    
+
     <%= yield %>
   </body>
 </html>
