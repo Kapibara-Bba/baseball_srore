@@ -1,7 +1,7 @@
 <div class="body">
   <div class="container mt-5">
     <div class="row">
-      <div class="cool-xs-6">
+      <div class="mx-auto">
         <h2 class="welcome">
           <b>Welcom</b> to <b>BaseballScore !!</b>
         </h2>
@@ -11,9 +11,12 @@
             楽しい野球人生を！！
           </h5>
         </div>
-      　<div class="row">
-      　  <%=
-      　</div>
+        <div class="row">
+          <%= link_to "ログイン", new_user_session_path, class: 'btn btn-info btn-block' %>
+        </div>
+        <div class="row">
+          <%= link_to "新規登録", new_user_registration_path, class: 'btn btn-success btn-block' %>
+        </div>
       </div>
     </div>
   </div>
