@@ -21,9 +21,18 @@
   box-sizing: border-box;
 }
 
+.header-title {
+  font-size: 35px;
+  vertical-align: middle;
+}
+
 header {
   background-color: #333;
   height: 50px;
+}
+
+.nav-item {
+  padding-right: 20px;
 }
 
 .nav li {
