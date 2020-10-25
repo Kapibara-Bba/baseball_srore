@@ -21,6 +21,13 @@
   box-sizing: border-box;
 }
 
+.home-top {
+  height: 500;
+  background-image: url(ball.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
 .header-title {
   font-size: 35px;
   vertical-align: middle;

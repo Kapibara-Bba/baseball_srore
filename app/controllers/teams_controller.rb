@@ -22,5 +22,9 @@ class TeamsController < ApplicationController
 
   def destroy
   end
-
+  
+  private
+  def params_team
+    params.require(:team).permit(:teamname, :prefecture_code, :city)
+  end
 end
