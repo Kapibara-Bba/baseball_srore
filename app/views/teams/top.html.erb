@@ -1,0 +1,32 @@
+<div class="body">
+  <div class="container">
+    <div class="row">
+      <div class="mx-auto">
+        <h2>チーム選択</h2>
+        <div class="row">
+          <div class="team-select">
+            <h4>既にチームに加入している方</h4>
+            <%= form_with model:@teams do |f| %>
+              <%= f.select :team_id, @teams.map{ |team| [team.teamname, team.id] } %>
+            <% end %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="new-team">
+            <h4>新しくチームを作る方</h4>
+            <%= form_with model:@team do |f| %>
+              <div class="field">
+                <label for="teamname">チーム名</label>
+                <div class="row">
+                  <%= f.text_field :teamname, class: 'col-xs-12' %>
+              </div>
+              <div class="field">
+                <label for="prefecture_code" %>
+                <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :name, {prompt: "選ぶ"} %>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
