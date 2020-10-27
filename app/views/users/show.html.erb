@@ -8,7 +8,7 @@
             <h2>打撃成績</h2>
             <div class="row">
               <h4><%= @user.bat.count %>打席 <%= @user.batting.count %>打数 <%= @user.hit.count %>安打</h4>
-              <h4><%= @user.hit.count / @user.batting.count %></h4>
+              <h4><%= @user.hit.count ％ @user.batting.count %></h4>
               <h4>二塁打<%= @user.two_base_hit.count %>  三塁打<%= @user.three_base_hit %>  本塁打<%= @user.homerun.count %></h4>
               <h4>三振<%= @user.strike_out.count %>  四死球<%= @user.balls.count %>  犠打<%= @user.bunt.count %></h4>
               <h4>打点<%= @user.dot.count %>  得点<%= @user.homein.count %>  犠飛<%= @user.sacrifice_fly.count %></h4>
