@@ -10,7 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_25_065842) do
+ActiveRecord::Schema.define(version: 2020_10_31_040413) do
+
+  create_table "records", force: :cascade do |t|
+    t.integer "bat"
+    t.integer "batting"
+    t.integer "hit"
+    t.integer "two_base_hit"
+    t.integer "three_base_hit"
+    t.integer "homerun"
+    t.integer "strike_out"
+    t.integer "ball"
+    t.integer "bunt"
+    t.integer "dot"
+    t.integer "homein"
+    t.integer "sacrifice_fly"
+    t.integer "still"
+    t.integer "error"
+    t.integer "game"
+    t.integer "pitch_game"
+    t.integer "win"
+    t.integer "lose"
+    t.integer "inning"
+    t.integer "to_be_hit"
+    t.integer "to_be_homerun"
+    t.integer "to_be_strike_out"
+    t.integer "to_be_ball"
+    t.integer "to_be_point"
+    t.integer "earned_run"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "teams", force: :cascade do |t|
     t.integer "user_id"
