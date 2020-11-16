@@ -27,15 +27,15 @@
           <%= f.label :パスワード確認 %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
         </div>
-      <% end %>
 
-      <div class="actions">
-        <div class="container mt-3">
-          <div class="row">
-            <%= link_to "登録してチーム選択へ", teamselect_path, class: "btn btn-info col-xs-12" %>
+        <div class="actions">
+          <div class="container mt-3">
+            <div class="row">
+              <%= f.submit "登録してチーム選択へ", class: "btn btn-info col-xs-12" %>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
 
       <div class="container mt-3">
         <div class="sign_up-link">

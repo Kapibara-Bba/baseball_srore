@@ -12,6 +12,8 @@ class TeamsController < ApplicationController
   end
 
   def create
+    @team = Team.new(team_params)
+    @team.save
   end
 
   def edit
@@ -22,7 +24,7 @@ class TeamsController < ApplicationController
 
   def destroy
   end
-  
+
   private
   def params_team
     params.require(:team).permit(:teamname, :prefecture_code, :city)
